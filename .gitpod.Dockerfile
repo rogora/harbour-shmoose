@@ -1,10 +1,6 @@
 FROM gitpod/workspace-full
 
-USER root
-
-# Install custom tools, runtime, etc. using apt-get
-# For example, the command below would install "bastet" - a command line tetris clone:
-#
- RUN apt-get update \
-	&& apt-get install -y qt5-qmake qtbase5-dev qt5-default  \
-	&& apt-get clean && rm -rf /var/cache/apt/*
+# Install custom tools, runtime, etc.
+RUN sudo apt-get update \
+    && sudo apt-get install -y qt5-qmake qtbase5-dev qt5-default \
+    && sudo rm -rf /var/lib/apt/lists/*
